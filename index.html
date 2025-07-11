@@ -12,8 +12,8 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            background-color: #000000;
+            color: #FFFFFF;
         }
         #typewriter-text {
             font-size: 2em;
@@ -35,10 +35,10 @@
     <div id="typewriter-text"></div>
 
     <script>
-        const textToType = "Xin chào! Đây là hiệu ứng đánh máy.\nBạn có thể thay đổi văn bản này.";
+        const textToType = "Xin chào! Đây là lời nhắn nhủ nếu em đọc được nó hãy coi nó như lời cuối cùng nghẹn lại mà anh không có can đảm để nói.\nBạn có thể thay đổi văn bản này.";
         const typewriterElement = document.getElementById('typewriter-text');
         let charIndex = 0;
-        const typingSpeed = 70; // milliseconds per character
+        const typingSpeed = 90; // milliseconds per character
 
         function typeWriter() {
             if (charIndex < textToType.length) {
