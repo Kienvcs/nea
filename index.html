@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Effect</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        #typewriter-text {
+            font-size: 2em;
+            white-space: pre-wrap; /* Preserve whitespace and allow wrapping */
+            overflow: hidden; /* Hide the overflow initially */
+            border-right: .15em solid orange; /* Blinking cursor effect */
+            animation: blink-caret .75s step-end infinite;
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="typewriter-text"></div>
+
+    <script>
+        const textToType = "Xin chào! Đây là hiệu ứng đánh máy.\nBạn có thể thay đổi văn bản này.";
+        const typewriterElement = document.getElementById('typewriter-text');
+        let charIndex = 0;
+        const typingSpeed = 70; // milliseconds per character
+
+        function typeWriter() {
+            if (charIndex < textToType.length) {
+                typewriterElement.textContent += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, typingSpeed);
+            } else {
+                // Optionally remove the cursor after typing is complete
+                typewriterElement.style.borderRight = 'none';
+            }
+        }
+
+        // Start the typewriter effect when the page loads
+        window.onload = typeWriter;
+    </script>
+
+</body>
+</html>
