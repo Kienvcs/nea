@@ -17,13 +17,11 @@
         }
         #typewriter-text {
             font-size: 2em;
-            white-space: pre-wrap; /* Preserve whitespace and allow wrapping */
-            overflow: hidden; /* Hide the overflow initially */
-            border-right: .15em solid orange; /* Blinking cursor effect */
+            white-space: pre-wrap; 
+            overflow: hidden; 
+            border-right: .15em solid orange; 
             animation: blink-caret .75s step-end infinite;
         }
-
-        /* The typewriter cursor effect */
         @keyframes blink-caret {
             from, to { border-color: transparent }
             50% { border-color: orange; }
@@ -38,7 +36,7 @@
         const textToType = "Xin chào! Đây là chữ tự dộng \n Tác dụng phân tích của chữ chạy tự động ​Chữ chạy tự động hay marquee text là một kỹ thuật hiển thị nội dung động dù mang tính cổ điển nhưng vẫn duy trì những tác dụng chiến lược độc đáo trong môi trường thông tin hiện đại Tác dụng cốt lõi của nó là khả năng thu hút sự chú ý tức thì bởi lẽ chuyển động luôn tạo ra một điểm nóng thị giác buộc người dùng phải để mắt Điều này cực kỳ quan trọng trong việc truyền tải thông báo khẩn cấp như cảnh báo hệ thống, cập nhật tin tức nóng, hoặc các ưu đãi giới hạn thời gian cần sự cấp bách để đảm bảo thông điệp không bị bỏ sót giữa biển nội dung tĩnh Tác dụng thứ hai mang tính thực dụng là tối ưu hóa không gian hiển thị Trong những khu vực giới hạn về diện tích như banner quảng cáo nhỏ màn hình LED hay tiêu đề trang web chữ chạy cho phép truyền tải nội dung dài hoặc luân phiên nhiều thông báo khác nhau một cách hiệu quả mà vẫn giữ cho giao diện chung gọn gàng và dễ đọc Cuối cùng chữ chạy tự động còn phục vụ mục đích chức năng và thẩm mỹ, đóng vai trò là một phần tử thiết kế để tạo ra nhịp điệu và sự năng động trên các trang web nghệ thuật, hoặc thực hiện chức năng chuyên biệt không thể thay thế trong việc hiển thị dữ liệu thời gian thực (như tỷ giá cổ phiếu) hay làm phụ đề (ticker tape) cho tin tức truyền hình. Tuy nhiên, việc sử dụng cần được cân nhắc kỹ lưỡng về tốc độ để tránh gây phân tâm và mỏi mắt, bởi sự lạm dụng có thể làm giảm khả năng đọc và hiệu quả truyền tải thông tin. Tóm lại, chữ chạy tự động là một công cụ mạnh mẽ để ưu tiên hóa thông tin, nếu được áp dụng một cách chiến lược, nó sẽ là giải pháp hiệu quả cho việc tăng cường sự nổi bật và truyền tải dữ liệu liên tục";
         const typewriterElement = document.getElementById('typewriter-text');
         let charIndex = 0;
-        const typingSpeed = 90; // milliseconds per character
+        const typingSpeed = 50; 
 
         function typeWriter() {
             if (charIndex < textToType.length) {
@@ -46,12 +44,10 @@
                 charIndex++;
                 setTimeout(typeWriter, typingSpeed);
             } else {
-                // Optionally remove the cursor after typing is complete
                 typewriterElement.style.borderRight = 'none';
             }
         }
 
-        // Start the typewriter effect when the page loads
         window.onload = typeWriter;
     </script>
 
